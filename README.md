@@ -116,7 +116,7 @@ It's common to start your code on top of others' code. Here we show you how to d
 
    - Click the `Code` button on https://github.com/pytorch/examples and copy the HTTPS URL (https://github.com/pytorch/examples.git) for their git repository.
 
-   - In Git Bash, run `https://github.com/pytorch/examples.git`. You will then find the `examples` folder downloaded to `C:\Project`. The `examples` folder contains the code you saw in https://github.com/pytorch/examples.
+   - In Git Bash, run `git clone https://github.com/pytorch/examples.git`. You will then find the `examples` folder downloaded to `C:\Project`. The `examples` folder contains the code you saw in https://github.com/pytorch/examples.
 
      
 
