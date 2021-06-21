@@ -9,7 +9,7 @@ I use Windows 10 in this tutorial and I assume you already have:
 
 
 
-## Set up SSH/SFTP clients for connecting to the servers
+## Set up SSH/SFTP clients for connecting to the servers (local)
 
 As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as clients for SSH/SFTP.
 
@@ -25,7 +25,7 @@ As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as 
 
 
 
-## Set up the remote environment 
+## Set up the remote environment (remote)
 
 1. Set up byobu (or tmux/screen) so that your running process can be maintained after you end SSH session. Execute below commands after you connect to the server in XShell.
 
@@ -102,11 +102,11 @@ As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as 
 
    
 
-## Install Git and clone a repository
+## Install Git and clone a repository (local)
 
-It's common to start your code on top of others' code. Here we show you how to download code for a github repository.
+It's common to start your code on top of others' code. Here we show you how to download code for a github repository to your local computer.
 
-1. Download and install git from https://git-scm.com/downloads.
+1. Download and install git on your local computer from https://git-scm.com/downloads.
 
 2. As an example, we show you how to clone the code of official PyTorch examples to your local computer.
 
@@ -120,7 +120,7 @@ It's common to start your code on top of others' code. Here we show you how to d
 
      
 
-## Set up PyCharm for remote debugging and automatic deployment
+## Set up PyCharm for remote debugging and automatic deployment (local + remote)
 
 Here we show you how to set up PyCharm (a IDE for python) to play with the downloaded code: working on the code locally and running/debugging it on the server.
 
