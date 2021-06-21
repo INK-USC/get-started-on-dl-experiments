@@ -7,9 +7,11 @@ I use Windows 10 in this tutorial and I assume you already have:
 - The connection information (host, port, username, password) for a remote GPU server, which can be connected via SSH;
 - An edu email address or proof documents, which is needed for getting a license for the professional version of PyCharm with the remote development feature.
 
+_Sections with [local] are about steps needed to be done on your local computer._
 
+_Sections with [remote] are about steps needed to be done on the remote server, through the SSH shell provided by XShell._
 
-## Set up SSH/SFTP clients for connecting to the servers (local)
+## Set up SSH/SFTP clients for connecting to the servers [local]
 
 As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as clients for SSH/SFTP.
 
@@ -25,7 +27,7 @@ As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as 
 
 
 
-## Set up the remote environment (remote)
+## Set up the remote environment [remote]
 
 1. Set up byobu (or tmux/screen) so that your running process can be maintained after you end SSH session. Execute below commands after you connect to the server in XShell.
 
@@ -102,7 +104,7 @@ As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as 
 
    
 
-## Install Git and clone a repository (local)
+## Install Git and clone a repository [local]
 
 It's common to start your code on top of others' code. Here we show you how to download code for a github repository to your local computer.
 
@@ -120,7 +122,7 @@ It's common to start your code on top of others' code. Here we show you how to d
 
      
 
-## Set up PyCharm for remote debugging and automatic deployment (local + remote)
+## Set up PyCharm for remote debugging and automatic deployment [local + remote]
 
 Here we show you how to set up PyCharm (a IDE for python) to play with the downloaded code: working on the code locally and running/debugging it on the server.
 
@@ -184,11 +186,11 @@ Here we show you how to set up PyCharm (a IDE for python) to play with the downl
 
    - The default server is set in File → Settings → Build, Execution, Deployment → Deployment using ✔.
 
-## Manage your code with git
+## Manage your code with git [local]
 
 
 
-## Guidance for running jobs on servers
+## Guidance for running jobs on servers [local + remote]
 
 - Please check the GPU utilization (by `gpustat` or `nvidia-smi`) of the server before running your job. Specify the GPU id of your job by running with `CUDA_VISIBLE_DEVICES=X python xxx.py` to assign your job to certain gpu(s).
 - Some servers use job scheduling system like Slurm. For those servers, you **shouldn't** directly run a GPU job from IDE or shell. You **should always** submit your jobs with slurm commands.
