@@ -98,7 +98,7 @@ As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as 
 
    Use Ctrl+D to exit the python interpreter.
 
-4. Check the GPU status using `gpustats` (if installed by the server admin) or `nvidia-smi`.
+4. Check the GPU status using `gpustat` (if installed by the server admin) or `nvidia-smi`.
 
    - Usually you shouldn't run your job on GPUs that have already been occupied by others.
 
