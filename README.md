@@ -79,10 +79,8 @@ As Windows doesn't come with native SSH/SFTP support, we use XShell and XFTP as 
    Next we install PyTorch 1.9.0 using the command shown in https://pytorch.org/.
 
    ```
-   conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch
+   conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
    ```
-
-   * We change the cudatookit version from 10.2 to 10.1 to be compatible with the GPU driver installed on the server.
 
    Test if GPU can be detected by pytorch.
 
@@ -156,7 +154,7 @@ Here we show you how to set up PyCharm (a IDE for python) to play with the downl
 
      <img src="figures/3_pycharm_run.png">
 
-   - Choose the remote `Python interpreter` you just configured. Pass any `Parameters` needed by the python script. Also you can set `Environment Variables` here. We set `CUDA_VISIBLE_DEVICES=0` to let the program only use the first GPU on the server.
+   - Choose the remote `Python interpreter` you just configured. Pass any `Parameters` needed by the python script. Also you can set `Environment Variables` here. We set `CUDA_VISIBLE_DEVICES=0` to let the program only use the first GPU on the server. **If the GPU resources are managed by Slurm, please first mark this GPU as occupied in Slurm.**
 
      <img src="figures/4_pycharm_run_config.png">
 
@@ -184,7 +182,7 @@ Here we show you how to set up PyCharm (a IDE for python) to play with the downl
 
 7. Be careful about syncing your local code with the remote code, so that you won't run or debug a wrong version of the code with PyCharm. You can check the deployment configuration at: File → Settings → Build, Execution, Deployment → Deployment → Options. Check the value for "Upload changed files automatically to the default server".
 
-   - The default server is set in File → Settings → Build, Execution, Deployment → Deployment using ✔.
+   - The default server is set in File → Settings → Build, Execution, Deployment → Deployment using ✓.
 
 ## Manage your code with git [local]
 
@@ -192,5 +190,5 @@ Here we show you how to set up PyCharm (a IDE for python) to play with the downl
 
 ## Guidance for running jobs on servers [local + remote]
 
-- Please check the GPU utilization (by `gpustat` or `nvidia-smi`) of the server before running your job. Specify the GPU id of your job by running with `CUDA_VISIBLE_DEVICES=X python xxx.py` to assign your job to certain gpu(s).
-- Some servers use job scheduling system like Slurm. For those servers, you **shouldn't** directly run a GPU job from IDE or shell. You **should always** submit your jobs with slurm commands.
+- Please check the GPU utilization (by `gpustat` or `nvidia-smi`) of the server before running your job.
+- If the GPU resources are not managed by Slurm, specify the GPU id of your job by running with `CUDA_VISIBLE_DEVICES=X python xxx.py` to assign your job to certain gpu(s). Otherwise, use Slurm commands to submit your jobs.
